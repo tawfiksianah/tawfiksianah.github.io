@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>توفيق صيانة - صيانة الأجهزة الإلكترونية</title>
+<meta name="description" content="خدمات صيانة سوفت وير وهارد وير للابتوبات والكمبيوترات - توفيق صيانة">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0b1526;
+    --navy-800:#0f1e35;
+    --navy-700:#16294a;
+    --orange-500:#f5820b;
+    --orange-600:#ea580c;
+    --amber-400:#fbbf24;
+    --green-500:#22c55e;
+    --green-600:#16a34a;
+    --ink:#0f1e35;
+    --muted:#5b6b85;
+    --line:#e7ebf2;
+    --bg-soft:#f7f9fc;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Cairo',system-ui,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;border:none;}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px;}
+
+  /* ===== Header ===== */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:saturate(180%) blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;max-width:1240px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.35rem;}
+  .brand-icon{
+    width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(135deg,var(--orange-500),var(--orange-600));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(234,88,12,.35);
+    flex-shrink:0;
+  }
+  .brand-icon svg{width:22px;height:22px;stroke:#fff;}
+  .brand span{background:linear-gradient(90deg,var(--orange-500),var(--orange-600));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  nav.main{display:flex;align-items:center;gap:28px;}
+  nav.main a.navlink{font-weight:600;color:var(--navy-800);opacity:.85;transition:opacity .2s;}
+  nav.main a.navlink:hover{opacity:1;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:12px;font-weight:700;font-size:.95rem;
+    transition:transform .15s ease, box-shadow .15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-whatsapp{
+    background:linear-gradient(135deg,var(--green-500),var(--green-600));
+    color:#fff;box-shadow:0 8px 18px rgba(22,163,74,.3);
+  }
+  .btn-whatsapp:hover{box-shadow:0 10px 22px rgba(22,163,74,.42);}
+  .btn-orange{
+    background:linear-gradient(135deg,var(--orange-500),var(--orange-600));
+    color:#fff;box-shadow:0 8px 18px rgba(234,88,12,.3);
+  }
+  .btn-orange:hover{box-shadow:0 10px 22px rgba(234,88,12,.42);}
+  .btn-outline-dark{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.18);
+    color:#fff;
+  }
+  .icon-round{width:20px;height:20px;flex-shrink:0;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;color:#fff;overflow:hidden;
+    padding:60px 0 90px;
+    background-image:
+      linear-gradient(180deg, rgba(9,16,29,.55) 0%, rgba(9,16,29,.72) 55%, rgba(9,16,29,.9) 100%),
+      url('img/founder-bg.jpg');
+    background-size:cover;
+    background-position:center 12%;
+    background-repeat:no-repeat;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(700px 400px at 85% 10%, rgba(245,130,11,.18), transparent 60%),
+      radial-gradient(600px 500px at 10% 90%, rgba(34,197,94,.12), transparent 60%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .hero-photo-card{
+    position:relative;border-radius:24px;overflow:hidden;
+    box-shadow:0 30px 60px rgba(0,0,0,.45);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .hero-photo-card img{width:100%;height:420px;object-fit:cover;}
+  .stat-float{
+    position:absolute;bottom:22px;right:22px;left:22px;
+    background:rgba(11,21,38,.72);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    padding:18px 20px;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .stat-float .txt strong{display:block;font-size:1.05rem;font-weight:800;}
+  .stat-float .txt span{color:var(--amber-400);font-weight:600;font-size:.92rem;}
+  .stat-medal{
+    width:52px;height:52px;border-radius:14px;flex-shrink:0;
+    background:linear-gradient(135deg,var(--orange-500),var(--orange-600));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .stat-medal svg{width:26px;height:26px;stroke:#fff;}
+
+  .hero-copy .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(245,130,11,.12);
+    border:1px solid rgba(245,130,11,.35);
+    color:var(--amber-400);
+    padding:9px 16px;border-radius:999px;font-weight:700;font-size:.88rem;
+    margin-bottom:22px;
+  }
+  .hero-copy .eyebrow svg{width:16px;height:16px;stroke:var(--amber-400);}
+  .hero-copy h1{
+    font-size:clamp(2.4rem,5vw,3.6rem);
+    font-weight:900;line-height:1.18;margin-bottom:18px;
+  }
+  .hero-copy h1 .accent{
+    background:linear-gradient(90deg,var(--amber-400),var(--orange-500));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-copy p.lead{
+    color:#c3cbdb;font-size:1.08rem;max-width:520px;margin-bottom:32px;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+  .hero-actions .btn-orange{padding:16px 26px;font-size:1rem;}
+  .hero-actions .btn-outline-dark{padding:16px 26px;font-size:1rem;}
+
+  /* ===== Why section ===== */
+  .why{padding:90px 0;background:#fff;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:900;margin-bottom:14px;color:var(--navy-800);}
+  .section-head p{color:var(--muted);font-size:1.05rem;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .why-card{
+    border:1px solid var(--line);border-radius:20px;padding:36px 28px;text-align:center;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    background:#fff;
+  }
+  .why-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,30,53,.08);border-color:transparent;}
+  .why-icon{
+    width:64px;height:64px;border-radius:16px;margin:0 auto 20px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .why-icon svg{width:30px;height:30px;stroke:#fff;}
+  .why-icon.green{background:linear-gradient(135deg,#22c55e,#0d9488);}
+  .why-icon.orange{background:linear-gradient(135deg,var(--orange-500),var(--orange-600));}
+  .why-icon.blue{background:linear-gradient(135deg,#4f7cff,#2f4cd6);}
+  .why-card h3{font-size:1.2rem;font-weight:800;margin-bottom:10px;}
+  .why-card p{color:var(--muted);font-size:.98rem;}
+
+  /* ===== Form section ===== */
+  .request{background:var(--bg-soft);padding:90px 0;}
+  .request .section-head .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff3e0;border:1px solid #ffd9a8;color:#b45309;
+    padding:8px 16px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:18px;
+  }
+  .request .section-head .eyebrow svg{width:15px;height:15px;stroke:#b45309;}
+  form.repair-form{
+    background:#fff;border:1px solid var(--line);border-radius:22px;
+    padding:40px;max-width:900px;margin:0 auto;
+    box-shadow:0 20px 50px rgba(15,30,53,.06);
+  }
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px;}
+  .field label{display:block;font-weight:700;margin-bottom:8px;font-size:.95rem;}
+  .field label .req{color:#ef4444;margin-left:2px;}
+  .field label .opt{color:var(--muted);font-weight:500;font-size:.82rem;}
+  .input-wrap{position:relative;}
+  .input-wrap svg{
+    position:absolute;left:16px;top:50%;transform:translateY(-50%);
+    width:20px;height:20px;stroke:#9aa6bb;
+  }
+  .input-wrap input,.input-wrap select,.input-wrap textarea{
+    width:100%;border:1.5px solid var(--line);border-radius:12px;
+    padding:14px 48px 14px 16px;font-family:inherit;font-size:.98rem;color:var(--ink);
+    background:#fbfcfe;transition:border-color .2s, box-shadow .2s;
+    appearance:none;
+  }
+  .input-wrap textarea{padding:14px 48px 14px 16px;min-height:120px;resize:vertical;}
+  .input-wrap input::placeholder,.input-wrap textarea::placeholder{color:#a7b1c4;}
+  .input-wrap input:focus,.input-wrap select:focus,.input-wrap textarea:focus{
+    outline:none;border-color:var(--orange-500);box-shadow:0 0 0 4px rgba(245,130,11,.12);
+  }
+  .field.full{grid-column:1/-1;}
+  .upload-box{
+    border:1.5px dashed #c7d0e0;border-radius:14px;background:#fbfcfe;
+    padding:26px;display:flex;align-items:center;justify-content:space-between;gap:14px;
+    cursor:pointer;transition:border-color .2s, background .2s;
+  }
+  .upload-box:hover{border-color:var(--orange-500);background:#fff8ef;}
+  .upload-box .upload-icon{
+    width:48px;height:48px;border-radius:12px;background:#fdecd2;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .upload-box .upload-icon svg{width:22px;height:22px;stroke:var(--orange-600);}
+  .upload-box .upload-text strong{display:block;font-weight:700;font-size:.98rem;}
+  .upload-box .upload-text span{color:var(--muted);font-size:.85rem;}
+  .submit-btn{
+    width:100%;padding:18px;border-radius:14px;font-size:1.05rem;font-weight:800;margin-top:26px;
+    background:linear-gradient(90deg,var(--orange-500),var(--orange-600));color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    box-shadow:0 14px 28px rgba(234,88,12,.32);
+  }
+  .submit-btn svg{width:20px;height:20px;stroke:#fff;transform:scaleX(-1);}
+  .submit-btn:hover{box-shadow:0 16px 34px rgba(234,88,12,.42);}
+
+  /* ===== Contact/WhatsApp section ===== */
+  .contact-cta{background:var(--navy-900);padding:90px 0;}
+  .contact-card{
+    max-width:640px;margin:0 auto;text-align:center;
+    background:linear-gradient(180deg,var(--navy-800),var(--navy-700));
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;padding:50px 36px;color:#fff;
+  }
+  .contact-card .icon{
+    width:72px;height:72px;border-radius:18px;margin:0 auto 22px;
+    background:linear-gradient(135deg,var(--green-500),var(--green-600));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px rgba(34,197,94,.35);
+  }
+  .contact-card .icon svg{width:32px;height:32px;stroke:#fff;}
+  .contact-card h3{font-size:1.5rem;font-weight:800;margin-bottom:26px;}
+  .phone-btn{
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    width:100%;padding:18px;border-radius:14px;font-weight:800;font-size:1.15rem;
+    margin-bottom:14px;letter-spacing:.5px;direction:ltr;
+  }
+  .phone-btn.filled{background:linear-gradient(90deg,var(--green-500),var(--green-600));color:#fff;box-shadow:0 12px 26px rgba(22,163,74,.32);}
+  .phone-btn.outline{background:transparent;border:1.5px solid rgba(34,197,94,.5);color:#fff;}
+  .phone-btn svg{width:20px;height:20px;stroke:currentColor;}
+
+  /* ===== Footer ===== */
+  footer.site{background:var(--navy-900);border-top:1px solid rgba(255,255,255,.08);padding:34px 0;text-align:center;}
+  footer.site .brand{justify-content:center;color:#fff;margin-bottom:10px;}
+  footer.site .brand span{-webkit-text-fill-color:initial;background:none;color:var(--amber-400);}
+  footer.site p{color:#8a95ab;font-size:.9rem;}
+
+  /* ===== Floating WhatsApp widget ===== */
+  .fab-wa{
+    position:fixed;bottom:26px;left:26px;z-index:60;
+    display:flex;flex-direction:column;align-items:flex-start;gap:10px;
+  }
+  .fab-bubble{
+    background:linear-gradient(135deg,var(--green-500),var(--green-600));
+    color:#fff;padding:10px 18px 10px 14px;border-radius:14px;
+    display:flex;align-items:center;gap:10px;font-weight:700;font-size:.9rem;
+    box-shadow:0 14px 30px rgba(22,163,74,.4);
+    opacity:0;transform:translateY(10px) scale(.95);
+    transition:opacity .25s ease, transform .25s ease;
+    pointer-events:none;
+  }
+  .fab-wa.open .fab-bubble{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}
+  .fab-main{
+    width:60px;height:60px;border-radius:50%;
+    background:linear-gradient(135deg,var(--green-500),var(--green-600));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 30px rgba(22,163,74,.4);
+    animation:pulse 2.2s infinite;
+  }
+  .fab-main svg{width:26px;height:26px;stroke:#fff;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(34,197,94,.45),0 14px 30px rgba(22,163,74,.4);}
+    70%{box-shadow:0 0 0 14px rgba(34,197,94,0),0 14px 30px rgba(22,163,74,.4);}
+    100%{box-shadow:0 0 0 0 rgba(34,197,94,0),0 14px 30px rgba(22,163,74,.4);}
+  }
+
+  /* Mobile menu toggle (simple) */
+  .menu-toggle{display:none;background:none;border:none;padding:6px;}
+  .menu-toggle svg{width:26px;height:26px;stroke:var(--navy-800);}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo-card{order:-1;}
+    .why-grid{grid-template-columns:1fr;}
+    .form-grid{grid-template-columns:1fr;}
+    nav.main a.navlink{display:none;}
+    form.repair-form{padding:26px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header class="site">
+  <div class="header-row">
+    <div class="brand">
+      <div class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <span>توفيق صيانة</span>
+    </div>
+    <nav class="main">
+      <a href="#request" class="navlink">طلب صيانة</a>
+    </nav>
+    <a href="#contact" class="btn btn-whatsapp">
+      <svg class="icon-round" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      واتساب
+    </a>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-photo-card">
+      <img src="img/founder.jpg" alt="خبير محترف في صيانة سوفت وير اللابات">
+      <div class="stat-float">
+        <div class="txt">
+          <strong>خبرة أكثر من 3 سنين</strong>
+          <span>في صيانة السوفت وير والهارد وير</span>
+        </div>
+        <div class="stat-medal">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        خدمة معتمدة وموثوقة
+      </div>
+      <h1>توفيق<br><span class="accent">لصيانة الأجهزة</span></h1>
+      <p class="lead">خبرة أكثر من 3 سنين في صيانة السوفت وير والهارد وير للابتوبات والكمبيوترات، وبأفضل جودة.</p>
+      <div class="hero-actions">
+        <a href="#request" class="btn btn-orange">
+          ابدأ طلب الصيانة
+          <svg class="icon-round" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline-dark">
+          تواصل مباشر
+          <svg class="icon-round" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why choose us ===== -->
+<section class="why">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>لماذا تختار توفيق صيانة؟</h2>
+      <p>نقدم أفضل خدمات الصيانة بأسعار تنافسية وجودة عالية</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </div>
+        <h3>دعم فني مستمر</h3>
+        <p>فريقنا متاح للإجابة على استفساراتك وحل مشاكلك في أي وقت.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>جودة عالية</h3>
+        <p>نستخدم أفضل الأدوات وقطع الغيار الأصلية لضمان جودة الإصلاح.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>سرعة في الإنجاز</h3>
+        <p>ننهي معظم المشاكل في نفس اليوم، لأن وقتك مهم.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Request form ===== -->
+<section class="request" id="request">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        خطوة واحدة تفصلك عن الحل
+      </div>
+      <h2>اشرح مشكلتك واحنا هنحلها</h2>
+      <p>املأ النموذج وسنقوم بالتواصل معك في أقرب وقت</p>
+    </div>
+
+    <form class="repair-form" onsubmit="return handleSubmit(event)">
+      <div class="form-grid">
+        <div class="field">
+          <label>رقم الهاتف <span class="req">*</span></label>
+          <div class="input-wrap">
+            <input type="tel" required placeholder="أدخل رقم هاتفك" dir="rtl">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+        </div>
+        <div class="field">
+          <label>الاسم <span class="req">*</span></label>
+          <div class="input-wrap">
+            <input type="text" required placeholder="أدخل اسمك الكامل">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>نوع الجهاز <span class="req">*</span></label>
+          <div class="input-wrap">
+            <select required>
+              <option value="" disabled selected>اختر نوع الجهاز</option>
+              <option value="laptop">لابتوب</option>
+              <option value="desktop">كمبيوتر مكتبي</option>
+              <option value="other">جهاز آخر</option>
+            </select>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 20h20"/></svg>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>وصف المشكلة <span class="opt">(اختياري)</span></label>
+          <div class="input-wrap">
+            <textarea placeholder="اشرح المشكلة بالتفصيل... مثلاً: الجهاز لا يفتح، شاشة زرقاء، بطيء جداً..."></textarea>
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="top:22px;transform:none;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+        </div>
+
+        <div class="field full">
+          <label>صورة المشكلة <span class="opt">(اختياري)</span></label>
+          <label class="upload-box" for="fileInput">
+            <div style="display:flex;align-items:center;gap:14px;">
+              <div class="upload-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <div class="upload-text">
+                <strong>اضغط لرفع صورة</strong>
+                <span>JPG, PNG, GIF - أقصى حجم 5MB</span>
+              </div>
+            </div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="#9aa6bb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          </label>
+          <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,.gif" style="display:none;">
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        إرسال طلب الصيانة
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="contact-cta" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <h3>تواصل معنا عبر واتساب</h3>
+      <a class="phone-btn filled" href="https://wa.me/201206516118" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        201206516118
+      </a>
+      <a class="phone-btn outline" href="https://wa.me/201278686080" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        201278686080
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="site">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-icon" style="width:34px;height:34px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <span>توفيق صيانة</span>
+    </div>
+    <p>© 2026 توفيق صيانة - صيانة الأجهزة الإلكترونية. جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<!-- ===== Floating WhatsApp widget ===== -->
+<div class="fab-wa" id="fabWa">
+  <div class="fab-bubble">تواصل عبر واتساب</div>
+  <button class="fab-main" onclick="toggleFab()" aria-label="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </button>
+</div>
+
+<script>
+  function toggleFab(){
+    document.getElementById('fabWa').classList.toggle('open');
+  }
+  function handleSubmit(e){
+    e.preventDefault();
+    alert('تم إرسال طلب الصيانة بنجاح! سنتواصل معك في أقرب وقت.');
+    e.target.reset();
+    return false;
+  }
+  const fileInput = document.getElementById('fileInput');
+  fileInput.addEventListener('change', function(){
+    const box = document.querySelector('.upload-box .upload-text strong');
+    if(this.files && this.files[0]){
+      box.textContent = this.files[0].name;
+    }
+  });
+</script>
+
+</body>
+</html>
